@@ -1,1 +1,1 @@
-# Клон игры "Flapyy Bird" на Unity
+# Клон игры "Flappy Bird" на Unity
