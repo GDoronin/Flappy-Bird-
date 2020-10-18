@@ -305,6 +305,49 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2612069268644728972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &373751041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373751043}
+  - component: {fileID: 373751042}
+  m_Layer: 0
+  m_Name: AdmobManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &373751042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373751041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91178c1facd0e7e4686c47705fbdc6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &373751043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373751041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430890783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2612069268537626515, guid: 2e4befd23bdd5944193d066f28764319,
@@ -1243,6 +1286,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 335656848072102993, guid: c0d6524ce86e9fc41a7bf80c31a860db,
+        type: 3}
+      propertyPath: playSpriteButton
+      value: 
+      objectReference: {fileID: -5113445942062194717, guid: d760e8acbb2a4ca469603b2dade3c9d1,
+        type: 3}
+    - target: {fileID: 335656848072102993, guid: c0d6524ce86e9fc41a7bf80c31a860db,
+        type: 3}
+      propertyPath: pausedSpriteButton
+      value: 
+      objectReference: {fileID: 6477882209080789906, guid: d760e8acbb2a4ca469603b2dade3c9d1,
+        type: 3}
+    - target: {fileID: 335656848072102995, guid: c0d6524ce86e9fc41a7bf80c31a860db,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6477882209080789906, guid: d760e8acbb2a4ca469603b2dade3c9d1,
+        type: 3}
     - target: {fileID: 335656848072102999, guid: c0d6524ce86e9fc41a7bf80c31a860db,
         type: 3}
       propertyPath: m_Name
