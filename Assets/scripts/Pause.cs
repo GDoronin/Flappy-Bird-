@@ -5,28 +5,28 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    Image image;
+    private Image _image;
 
-    // References
+    // References.
     public Sprite playSpriteButton;
     public Sprite pausedSpriteButton;
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        _image = GetComponent<Image>();
     }
     public void OnPausedGame()
     {
         if(GameManager.gameIsPaused == false)
         {
             Time.timeScale = 0;
-            image.sprite = playSpriteButton;
+            _image.sprite = playSpriteButton;
             GameManager.gameIsPaused = true;
         }
         else
         {
             Time.timeScale = 1;
-            image.sprite = pausedSpriteButton;
+            _image.sprite = pausedSpriteButton;
             GameManager.gameIsPaused = false;
         }
     }

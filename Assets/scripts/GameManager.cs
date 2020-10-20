@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // References
+    // References.
     public GameObject gameOverCanvas;
     public GameObject score;
     public GameObject getReadyImage;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject scorePanel;
     public GameObject highScorePanel;
 
-    // Game States
+    // Game States.
     public static bool gameOver;
     public static bool gameHasStarted;
     public static bool gameIsPaused;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public static int gameScore;
     public AudioSource swooshSound;
 
-    void Start()
+    private void Start()
     {
         bottomLeft = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
 

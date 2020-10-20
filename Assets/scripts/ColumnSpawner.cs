@@ -17,52 +17,49 @@ public class ColumnSpawner : MonoBehaviour
     public float powerUpNearTheColumnRange;
     public float powerUpOffset;
 
-    float timer;
-    float timerPU = 1;
-    float randY;
-    float randYPU;
- 
+    private float _timer;
+    private float _timerPu = 1;
+    private float _randY;
+    private float _randYpu;
 
-    void Update()
+
+    private void Update()
     {
-        if((GameManager.gameOver == false) && (GameManager.gameHasStarted == true)) 
-        {
-            timer += Time.deltaTime;
-            if(timer >= maxTime)
-            {
-                SpawnTheColumn();
-                timer = 0;
-            }
+        if ((GameManager.gameOver != false) || (GameManager.gameHasStarted != true)) return;
 
-            if(GameManager.isPowerUp == false)
-            {
-                timerPU += Time.deltaTime;
-                if(timerPU >= maxTimePU)
-                {
-                    SpawnPowerUp();
-                    timerPU = 0;
-                }
-            }
-        }        
+        _timer += Time.deltaTime;
+
+        if(_timer >= maxTime)
+        {
+            SpawnTheColumn();
+            _timer = 0;
+        }
+
+        if (GameManager.isPowerUp != false) return;
+        _timerPu += Time.deltaTime;
+
+        if (!(_timerPu >= maxTimePU)) return;
+        SpawnPowerUp();
+        _timerPu = 0;
     }
 
     public void SpawnTheColumn()
     {
         GameObject newColumn  = Instantiate(column);
-        randY = Random.Range(minYForColumn, maxYForColumn);
-        newColumn.transform.position = new Vector2(transform.position.x, randY);
+        _randY = Random.Range(minYForColumn, maxYForColumn);
+        newColumn.transform.position = new Vector2(transform.position.x, _randY);
     }
 
     public void SpawnPowerUp()
     {
         GameObject newPowerUp = Instantiate(powerUp);
-        randYPU = Random.Range(minYForColumn, maxYForColumn);
-        if(Mathf.Abs(randYPU - randY) < powerUpNearTheColumnRange)
-            if(randYPU > randY)
-                randYPU = randYPU + powerUpOffset;
+        _randYpu = Random.Range(minYForColumn, maxYForColumn);
+        if(Mathf.Abs(_randYpu - _randY) < powerUpNearTheColumnRange)
+            if(_randYpu > _randY)
+                _randYpu += powerUpOffset;
             else
-                randYPU = randYPU - powerUpOffset;
-        newPowerUp.transform.position = new Vector2(transform.position.x, randYPU);
+                _randYpu -= powerUpOffset;
+        newPowerUp.transform.position = new Vector2(transform.position.x, _randYpu);
         maxTimePU = ((int)Random.Range(powerUpLeftTimeEdge, powerUpRightTimeEdge)) * maxTime;
     }
 }
